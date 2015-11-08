@@ -80,42 +80,89 @@ What does this include?
 \begin{frame}
 \frametitle{Shapes as First Class Objects}
 \thcomment{like racket. Wanted to have shape object. collage style.}
+	\begin{itemize}
+		\item Racket-style implementation of shapes
+		\item Shapes are treated as objects, modified through functions
+		\item Shapes hold their specifications for drawing
+		\item Easy to redraw wherever needed
+		\item Easier to understand conceptually for students
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
+
+
 \frametitle{Simple Shapes}
 \thcomment{create shape template, then reuse when needed. Quil does it this way (ex)}
+	\begin{itemize}
+		\item Quil shapes live in the draw function
+		\item Quil shapes are functions to draw the shape
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Our Shapes}
 \thcomment{We do it this way (ex). Uses draw function.}
+	\begin{itemize}
+		\item Our shapes are defined once and reused when needed
+		\item Our shapes are drawn through the draw-shape (or ds) function
+	\end{itemize}
+\thcomment{Talk about mvc differences here, get Elena to word it}
 \end{frame}
 
 \begin{frame}
 \frametitle{Complex Shapes}
 \thcomment{creating complex shapes. deconstructable.}
+	\begin{itemize}
+		\item Complex shapes are just a vector of simple shapes
+		\item Each simple shape holds their individual offsets
+		\item These offsets are needed for drawing it in the correct relative position
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Above and Beside}
 \thcomment{show above and beside (ex)}
+	\begin{itemize}
+		\item Complex shapes are constructed through calling above or beside
+		\item Can use reduce and map
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
-\frametitle{Overlay and Align}
-\rmcomment{show overlay and beside align overlay align etc. (ex)}
+\frametitle{Overlay}
+\rmcomment{show overlay}
+	\begin{itemize}
+		\item Complex shapes are also constructed through overlay
+	\end{itemize}
 \end{frame}
+
+\begin{frame}
+\frametitle{Align}
+\rmcomment{beside align overlay align etc. (ex)}
+	\begin{itemize}
+		\item An align version of overlay, above, and beside exist
+	\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Rotation and Scaling}
 \rmcomment{shape rotation and scaling (ex) - image at the end to transition to next slide}
+	\begin{itemize}
+		\item A shape's size and orientation can be modified
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Images}
 \thcomment{images treated like shapes. Rotate, applying most of the functions.}
+	\begin{itemize}
+		\item images can be rotated and scaled similar to shapes
+	\end{itemize}
 \end{frame}
+
+\thcomment{Put Beach example here}
 
 \begin{frame}
 \frametitle{Implementation}
@@ -125,16 +172,31 @@ What does this include?
 \begin{frame}
 \frametitle{Simple Shape Structure}
 \rmcomment{Explain how the shape structure is set up.}
+	\begin{itemize}
+		\item As a data structure, simple shapes are hash's
+		\item Shapes hold a variety of information within them
+	\end{itemize}
+	\thcomment{Hash example here}
 \end{frame}
 
 \begin{frame}
 \frametitle{Complex Shape Structure}
 \rmcomment{Explain the complex shape structure}
+	\begin{itemize}
+		\item Complex shapes are vectors of shapes
+		\item Each shape knows its position from the core of the shape
+		\item This allows for a 'deconstructable' complex shape
+	\end{itemize}
+	\thcomment{explode example here}
 \end{frame}
 
 \begin{frame}
 \frametitle{Draw-Shape Structure}
 \rmcomment{Explain how the draw-shape function works.}
+	\begin{itemize}
+		\item Draw-shape calls the internal Quil draw function within the shape object
+		\item Draw-shape also works on image objects
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
