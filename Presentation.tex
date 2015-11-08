@@ -60,8 +60,57 @@ Developing Clojure-based introductory CS course ({\it \href{http://cda.morris.um
 What does this include? 
 \begin{enumerate}
 \item Beginner-friendly error messages. 
-\item Libraries and tools 
+\item Libraries and tools that allow beginners to explore functional approaches, recursion, and abstraction.
+\item Integration into a beginner-friendly IDE. 
 \end{enumerate}
+\end{frame}
+
+\begin{frame}
+\frametitle{What are we working on?}
+Developing Clojure-based introductory CS course ({\it \href{http://cda.morris.umn.edu/~elenam/\#clojure}{ClojurEd project}}). 
+
+What does this include? 
+\begin{enumerate}
+\item Beginner-friendly error messages. 
+\item {\bf Libraries and tools that allow beginners to explore functional approaches, recursion, and abstraction: graphical library.}
+\item Integration into a beginner-friendly IDE. 
+\end{enumerate}
+Summer project 2015. 
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Beginner-friendly graphical library}
+Inspiration: Racket "universe" package (MVC, first-class shapes):
+\begin{verbatim}
+(define (main duration)
+  (big-bang '() ; starts with an empty list of positions.
+   [to-draw display-dots] ;draw dots on canvas
+   [on-tick do-nothing 1 duration] ;dots don't move w/time
+   [on-mouse add-or-remove-dot])) ;click handling
+\end{verbatim}
+\begin{figure}[h]
+\includegraphics[width=4cm]{PresentationImages/dots.jpg}
+\end{figure}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Beginner-friendly graphical library}
+\begin{verbatim}
+(define dot (circle 10 "solid" "blue"))
+
+;; display-dots: list of positions  -> image
+(define (display-dots lop)     
+  (cond [(empty? lop) blank-scene]
+        [else (place-image dot
+                           (posn-x (first lop))
+                           (posn-y (first lop))
+                           (display-dots (rest lop)))]))
+
+;; add-or-remove-dot: list of positions, 
+;; coordinates of click -> list of positions
+.........
+\end{verbatim}
+
 \end{frame}
 
 \begin{frame}
