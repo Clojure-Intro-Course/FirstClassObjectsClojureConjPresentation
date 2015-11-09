@@ -16,7 +16,7 @@
 %\usepackage{multirow}
 
 \definecolor{ForestGreen}{RGB}{34,139,34}
-\definecolor{BestBlue}{RGB}{25,200,200}
+\definecolor{BestBlue}{RGB}{80,255,255}
 % Uncomment this if you want to show work-in-progress comments
 \newcommand{\comment}[1]{{\bf \tt  {#1}}}
 % Uncomment this if you don't want to show comments
@@ -31,6 +31,7 @@
 \author{Elena Machkasova, Thomas Hagen, Ryan McArthur}
 \title{Super-fun with First-class Shapes in Quil}
 \date{November 16, 2015}
+
 
 \begin{frame}
 \frametitle {Super-fun with First-class Shapes in Quil}
@@ -89,7 +90,7 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
    [on-mouse add-or-remove-dot])) ;click handling
 \end{verbatim}
 \begin{figure}[h]
-%\includegraphics[width=4cm]{PresentationImages/dots.jpg}
+\includegraphics[width=4cm]{PresentationImages/dots.jpg}
 \end{figure}
 \end{frame}
 
@@ -158,6 +159,15 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item Our shapes are drawn through the draw-shape (or ds) function
 	\end{itemize}
 	\includegraphics[width=4cm]{PresentationImages/fcsGreenRect.png}
+\end{frame}
+
+\begin{frame}
+\frametitle{Creating a Collage}
+\thcomment{We do it this way (ex). Uses draw function.}
+	\begin{itemize}
+		\item Functional Quil uses paintbrush approach
+		\item Our firstclass-shapes use collage approach
+	\end{itemize}
 \thcomment{Talk about mvc differences here, get Elena to word it}
 \end{frame}
 
@@ -169,6 +179,8 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item Each simple shape holds their individual offsets
 		\item Methods are used to create complex shapes from simple ones
 	\end{itemize}
+	\includegraphics[width=4cm]{PresentationImages/fcsGreenRects.png}
+	\includegraphics[width=4cm]{PresentationImages/4GreenRects.png}
 \end{frame}
 
 \begin{frame}
@@ -178,6 +190,8 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item Complex shapes are constructed through calling above or beside
 		\item Can use reduce and map
 	\end{itemize}
+	\includegraphics[width=4cm]{PresentationImages/greenScaleRects.png}
+	\includegraphics[width=1cm]{PresentationImages/greenScaleTower.png}
 \end{frame}
 
 \begin{frame}
@@ -186,6 +200,8 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 	\begin{itemize}
 		\item Complex shapes are also constructed through overlay
 	\end{itemize}
+	\includegraphics[width=4cm]{PresentationImages/fcsGreenHoleCode.png}
+	\includegraphics[width=4cm]{PresentationImages/greenHole.png}
 \end{frame}
 
 \begin{frame}
@@ -194,16 +210,59 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 	\begin{itemize}
 		\item An align version of overlay, above, and beside exist
 	\end{itemize}
+	\includegraphics[width=1cm]{PresentationImages/greenLeanRight.png}
+	\includegraphics[width=3cm]{PresentationImages/greenLeanRightCode.png}
+	\includegraphics[width=1cm]{PresentationImages/greenSlopeBottom.png}
+	\includegraphics[width=3cm]{PresentationImages/greenSlopeBottomCode.png}
+	\includegraphics[width=1cm]{PresentationImages/greenAlignBottomRight.png}
+	\includegraphics[width=3cm]{PresentationImages/greenAlignBottomRightCode.png}
 \end{frame}
 
-
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Rotation and Scaling}
-\rmcomment{shape rotation and scaling (ex) - image at the end to transition to next slide}
 	\begin{itemize}
-		\item A shape's size and orientation can be modified
+	\item You can modify the size and orientation of the shape
+	\begin{columns}[t]
+		\begin{column}{.45\textwidth}
+			\begin{figure}[h]
+			\includegraphics[width=4cm]{PresentationImages/rotateRedCode.png}
+			\end{figure}
+		\end{column}
+		\begin{column}{.3\textwidth}
+			\begin{figure}[h]
+			\includegraphics[width=0.8cm]{PresentationImages/red-rectangle-rotate.png}
+			\end{figure}		
+		\end{column}
+		\end{columns}
+		
+		\begin{columns}[t]
+		\begin{column}{.45\textwidth}
+			\begin{figure}[h]
+			\includegraphics[width=4cm]{PresentationImages/scaleRedCode.png}
+			\end{figure}
+		\end{column}
+		\begin{column}{.3\textwidth}
+			\begin{figure}[h]
+			\includegraphics[width=1.2cm]{PresentationImages/red-rectangle-scale.png}
+			\end{figure}		
+		\end{column}
+		\end{columns}
+		
+		\begin{columns}[t]
+		\begin{column}{.45\textwidth}
+			\begin{figure}[h]
+			\includegraphics[width=6.5cm]{PresentationImages/rotateAndScaleRedCode.png}
+			\end{figure}
+		\end{column}
+		\begin{column}{.3\textwidth}
+			\begin{figure}[h]
+			\includegraphics[width=1.7cm]{PresentationImages/red-rectangle-scale-rotate.png}
+			\end{figure}		
+		\end{column}
+		\end{columns}
 	\end{itemize}
 \end{frame}
+
 
 \begin{frame}
 \frametitle{Images}
@@ -211,6 +270,8 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 	\begin{itemize}
 		\item images can be rotated and scaled similar to shapes
 	\end{itemize}
+	\includegraphics[width=4cm]{PresentationImages/pictureCode.png}
+	\includegraphics[width=1.7cm]{PresentationImages/elena.png}
 \end{frame}
 
 \thcomment{Put Beach example here}
