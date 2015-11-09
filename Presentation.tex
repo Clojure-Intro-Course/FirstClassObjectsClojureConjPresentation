@@ -30,7 +30,8 @@
 \begin{document}
 \author{Elena Machkasova, Thomas Hagen, Ryan McArthur}
 \title{Super-fun with First-class Shapes in Quil}
-\date{November 16, 2015}
+\date{Clojure/conj: November 16, 2015}
+\institute{University of Minnesota, Morris}
 
 
 \begin{frame}
@@ -83,9 +84,11 @@ What does this include?
 Summer project 2015. 
 \end{frame}
 
+\section{Wish-list for beginner-friendly library}
+
 \begin{frame}
 \frametitle{Beginner-friendly graphical library}
-Inspiration: Racket "universe" package:
+Inspiration: Racket "universe" package \href{http://racket-lang.org/}{http://racket-lang.org/}
 \begin{itemize}
 \item Separation of Model, View, Control (MVC) 
 \item Functional implementation of MVC: world state, functions: 
@@ -99,7 +102,7 @@ world state $\rightarrow$ image
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Beginner-friendly graphical library}
+\frametitle{Beginner-friendly graphical library: MVC}
 \begin{verbatim}
 (define (main duration)
   (big-bang '() ; starts with an empty list of positions.
@@ -113,7 +116,7 @@ world state $\rightarrow$ image
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Beginner-friendly graphical library}
+\frametitle{Beginner-friendly graphical library: first-class shapes}
 \begin{verbatim}
 (define dot (circle 10 "solid" "blue"))
 
@@ -143,7 +146,7 @@ world state $\rightarrow$ image
 }
 \end{frame}
 
-
+\section{Clojure first-class shapes}
 
 \begin{frame}
 \frametitle{Shapes as First Class Objects}
@@ -294,6 +297,8 @@ world state $\rightarrow$ image
 
 \thcomment{Put Beach example here}
 
+\section{Implementation}
+
 \begin{frame}
 \frametitle{Simple Shape Structure}
 \rmcomment{Explain how the shape structure is set up.}
@@ -324,6 +329,8 @@ world state $\rightarrow$ image
 	\end{itemize}
 	\includegraphics[width=12cm]{PresentationImages/dsCode.png}
 \end{frame}
+
+\section{Future work}
 
 \begin{frame}
 	\frametitle{Future Work}
