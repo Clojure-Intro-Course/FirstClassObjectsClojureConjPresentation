@@ -89,7 +89,7 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
    [on-mouse add-or-remove-dot])) ;click handling
 \end{verbatim}
 \begin{figure}[h]
-\includegraphics[width=4cm]{PresentationImages/dots.jpg}
+%\includegraphics[width=4cm]{PresentationImages/dots.jpg}
 \end{figure}
 \end{frame}
 
@@ -147,6 +147,7 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item Quil shapes live in the draw function
 		\item Quil shapes are functions to draw the shape
 	\end{itemize}
+	\includegraphics[width=4cm]{PresentationImages/quilGreenRect.png}
 \end{frame}
 
 \begin{frame}
@@ -156,6 +157,7 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item Our shapes are defined once and reused when needed
 		\item Our shapes are drawn through the draw-shape (or ds) function
 	\end{itemize}
+	\includegraphics[width=4cm]{PresentationImages/fcsGreenRect.png}
 \thcomment{Talk about mvc differences here, get Elena to word it}
 \end{frame}
 
@@ -163,9 +165,9 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 \frametitle{Complex Shapes}
 \thcomment{creating complex shapes. deconstructable.}
 	\begin{itemize}
-		\item Complex shapes are just a vector of simple shapes
+		\item Complex shapes are a collection of simple shapes
 		\item Each simple shape holds their individual offsets
-		\item These offsets are needed for drawing it in the correct relative position
+		\item Methods are used to create complex shapes from simple ones
 	\end{itemize}
 \end{frame}
 
