@@ -7,6 +7,7 @@
 %\usepackage{epsfig}
 \usepackage{color} %For Comments
 \usepackage{beamerthemeshadow} %Paul and Lemmon put this in, take out if you want
+\usepackage{tikz}
 %\usepackage[all]{xy}
 %\usepackage{float}
 %\usepackage{subfigure} 
@@ -14,6 +15,9 @@
 %\usepackage{url}
 %\usepackage{parskip}
 %\usepackage{multirow}
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+\RecustomVerbatimEnvironment{verbatim}{Verbatim}{}
 
 \definecolor{ForestGreen}{RGB}{34,139,34}
 \definecolor{BestBlue}{RGB}{80,255,255}
@@ -138,24 +142,13 @@ world state $\rightarrow$ image
 \end{frame}
 
 \begin{frame}
-\frametitle{Odds and ends (not an actual slide)}
-\emcomment{Don't forget:
-\begin{enumerate}
-\item Mention Racket influence  
-\item Mention the author of Quil fun mode
-\item Mention Tom Hall EuroClojure 2014
-\end{enumerate}
-}
-\end{frame}
-
-\begin{frame}
 \frametitle{World States in Quil}
 	\begin{itemize}
 		\item Thanks Nikita Beloglazov for Quil Fun-Mode
 		\item State as a Hash
 	\end{itemize}
 	\begin{figure}
-		\includegraphics[width=6cm]{PresentationImages/setupCode.png}
+		\includegraphics[width=8cm]{PresentationImages/setupCode.png}
 	\end{figure}
 \end{frame}
 
@@ -341,15 +334,15 @@ world state $\rightarrow$ image
 \begin{frame}
 \frametitle{Code Comparison}
 	\begin{itemize}
-		\item Complex shapes are also constructed through overlay
+		\item Strong conceptual differences in code structure
 	\end{itemize}
 	\begin{figure}
-	\hspace{-0.7cm}
+	\hspace{-0.4cm}
 	\includegraphics[width=3.5cm]{PresentationImages/theirRingsCode.png}
 	\hspace{0.1cm}
 	\includegraphics[width=2cm]{PresentationImages/rings.png}
 	\hspace{0.1cm}
-	\includegraphics[width=4.5cm]{PresentationImages/ourRingsCode.png}
+	\includegraphics[width=5cm]{PresentationImages/ourRingsCode.png}
 	\end{figure}
 \end{frame}
 
@@ -362,11 +355,11 @@ world state $\rightarrow$ image
 	\end{itemize}
 	\begin{figure}
 		\vspace{-0.3cm}
-		\includegraphics[width=1.5cm]{PresentationImages/rich_hickey.png}
+		\includegraphics[width=1.5cm]{PresentationImages/kappa96x130.png}
 		\hspace{0.4cm}
 		\includegraphics[width=5.5cm]{PresentationImages/pictureCode.png}
 		\hspace{0.4cm}
-		\includegraphics[width=2.6cm]{PresentationImages/rich_hickey.png}
+		\includegraphics[width=2.6cm]{PresentationImages/kappa96x130.png}
 	\end{figure}
 
 \end{frame}
@@ -425,12 +418,23 @@ world state $\rightarrow$ image
 
 \begin{frame}
 	\frametitle{Where to find it}
-	\emcomment{Need to add the URL and the clojars}
+	\begin{itemize}
+	\item Clojars Page
+	\href{https://clojars.org/org.clojars.quil-firstclass-shapes/firstclassshapes}{https://clojars.org/org.clojars.quil-firstclass-shapes/firstclassshapes}
+	\item Github Page
+	\href{https://github.com/Clojure-Intro-Course/quil-firstclass-shapes}{https://github.com/Clojure-Intro-Course/quil-firstclass-shapes}
+	\end{itemize}
+	\includegraphics[width=5cm]{PresentationImages/github.png}
+	\hspace{1cm}
+	\includegraphics[width=4cm]{PresentationImages/clojars.png}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Similar Work}
 Similar (completely independent) work: first-class shapes by Tom Hall, EuroClojure 2014, based on geomlab library. 
+\begin{figure}
+\includegraphics[width=4cm]{PresentationImages/geomlab.png}
+\end{figure}
 \end{frame} 
 
 \begin{frame}
@@ -442,12 +446,49 @@ Similar (completely independent) work: first-class shapes by Tom Hall, EuroCloju
 	\end{figure}
 	\begin{figure}
 		NSF North Star Stem Alliance/LSAMP grant 
-		\includegraphics[width=10cm]{PresentationImages/logoStem.jpg}
+		\includegraphics[width=12cm]{PresentationImages/logoStem.jpg}
 	\end{figure}	
 	{\centering \qquad Clojure/conj sponsors and Cognitect!}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
 \frametitle{Questions?}
+
+\begin{tikzpicture}[remember picture,overlay]
+\node at (current page.center) {\includegraphics[width=3cm]{PresentationImages/qMarkWhite.png}};
+\end{tikzpicture}
+\begin{verbatim}[fontsize=\tiny]
+(defn setup []
+   (q/frame-rate 60)
+   (q/color-mode :rgb)
+   (def big-arc (create-arc 200 200 (- (/ q/PI -2) 0.9) (/ q/PI 2) 50))
+   (def little-circle (create-ellipse 80 80 255))
+   (def small-rect (create-rect 50 50 50))
+   (def white-space (create-rect 50 25 255))
+   (def big-rect (create-rect 50 60 50))
+   (def q-mark (above (overlay-align :bottom :center
+                                      big-rect
+                                      (overlay 
+                                      little-circle
+                                               big-arc))
+                       big-rect
+                       white-space
+                       small-rect))
+    {})
+  
+  (defn update-state [state] {})
+
+
+ (defn draw-state [state]
+  (q/background 255)
+  (q/no-stroke)
+  (ds q-mark 500 500))
+\end{verbatim}
+	%\begin{figure}
+		%\includegraphics[width=1cm]{PresentationImages/qMarkBlack.png}
+		%\includegraphics[width=2cm]{PresentationImages/qMarkBlack2.png}
+		%\includegraphics[width=3cm]{PresentationImages/qMarkGrey.png}
+		%\includegraphics[width=4cm]{PresentationImages/qMarkGrey2.png}
+	%\end{figure}
 \end{frame}
 \end{document}
