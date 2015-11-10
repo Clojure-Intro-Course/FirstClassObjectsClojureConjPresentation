@@ -30,7 +30,8 @@
 \begin{document}
 \author{Elena Machkasova, Thomas Hagen, Ryan McArthur}
 \title{Super-fun with First-class Shapes in Quil}
-\date{November 16, 2015}
+\date{Clojure/conj: November 16, 2015}
+\institute{University of Minnesota, Morris}
 
 
 \begin{frame}
@@ -56,7 +57,9 @@ UMM is a small liberal arts campus of UMN located 3 hours driving from Minneapol
 
 \begin{frame}
 \frametitle{What are we working on?}
-Developing Clojure-based introductory CS course ({\it \href{http://cda.morris.umn.edu/~elenam/\#clojure}{ClojurEd project}}). 
+Specific goal: developing Clojure-based introductory CS course ({\it \href{http://cda.morris.umn.edu/~elenam/\#clojure}{ClojurEd project}}). 
+
+General goal: making Clojure more accessible to beginners and those with no Java background. 
 
 What does this include? 
 \begin{enumerate}
@@ -70,6 +73,8 @@ What does this include?
 \frametitle{What are we working on?}
 Developing Clojure-based introductory CS course ({\it \href{http://cda.morris.umn.edu/~elenam/\#clojure}{ClojurEd project}}). 
 
+General goal: making Clojure more accessible to beginners and those with no Java background. 
+
 What does this include? 
 \begin{enumerate}
 \item Beginner-friendly error messages. 
@@ -79,9 +84,25 @@ What does this include?
 Summer project 2015. 
 \end{frame}
 
-\begin{frame}[fragile]
+\section{Wish-list for beginner-friendly library}
+
+\begin{frame}
 \frametitle{Beginner-friendly graphical library}
-Inspiration: Racket "universe" package (MVC, first-class shapes):
+Inspiration: Racket "universe" package \href{http://racket-lang.org/}{http://racket-lang.org/}
+\begin{itemize}
+\item Separation of Model, View, Control (MVC) 
+\item Functional implementation of MVC: world state, functions: 
+
+\noindent
+old world state $\rightarrow$ new world state \\
+world state $\rightarrow$ image 
+\item  First-class shapes (circles, rectangles, user-added jpegs, etc) not attached to any position
+\item Functions to combine simpler shapes into complex shapes: {\tt above, beside, overlay, scale...}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Beginner-friendly graphical library: MVC}
 \begin{verbatim}
 (define (main duration)
   (big-bang '() ; starts with an empty list of positions.
@@ -95,7 +116,7 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 \end{frame}
 
 \begin{frame}[fragile]
-\frametitle{Beginner-friendly graphical library}
+\frametitle{Beginner-friendly graphical library: first-class shapes}
 \begin{verbatim}
 (define dot (circle 10 "solid" "blue"))
 
@@ -137,6 +158,7 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 	\end{figure}
 \end{frame}
 
+\section{Clojure first-class shapes}
 
 \begin{frame}
 \frametitle{Shapes as First Class Objects}
@@ -320,6 +342,8 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 
 \thcomment{Put Beach example here}
 
+\section{Implementation}
+
 \begin{frame}
 \frametitle{Simple Shape Structure}
 \rmcomment{Explain how the shape structure is set up.}
@@ -354,6 +378,8 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\includegraphics[width=11cm]{PresentationImages/dsCode.png}
 	\end{figure}
 \end{frame}
+
+\section{Future work}
 
 \begin{frame}
 	\frametitle{Future Work}
