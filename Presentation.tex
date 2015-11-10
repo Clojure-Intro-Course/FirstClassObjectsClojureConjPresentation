@@ -90,7 +90,7 @@ Summer project 2015.
 
 \begin{frame}
 \frametitle{Beginner-friendly graphical library}
-Inspiration: Racket "universe" package \href{http://racket-lang.org/}{http://racket-lang.org/}
+Inspiration: Racket ``universe'' package \href{http://racket-lang.org/}{http://racket-lang.org/}
 \begin{itemize}
 \item Separation of Model, View, Control (MVC) 
 \item Functional implementation of MVC: world state, functions: 
@@ -410,31 +410,41 @@ world state $\rightarrow$ image
 \begin{frame}
 	\frametitle{Future Work}
 	\begin{itemize}
-		\item Fill out more functionality
+		\item Make it easy to get the color information from shapes (currently color is hard-wired in drawing function). 
+		\item Add more functionality
 		\begin{itemize}
-			\item Rotate more complex shapes
+			\item Rotate complex shapes
 			\item Pixel-detail Overlay and Overlay-Align
+			\item Add support for text, textareas, etc.  
 			\item More seamless integration with Quil fun-mode
 		\end{itemize}
-		\item Open Source the project
-		\item Integrate a Clojure sound library
+		\item Add examples to the git repo. 
+		\item Wish-list: Integrate a Clojure sound library
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
+	\frametitle{Where to find it}
+	\emcomment{Need to add the URL and the clojars}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Similar Work}
+Similar (completely independent) work: first-class shapes by Tom Hall, EuroClojure 2014, based on geomlab library. 
+\end{frame} 
+
+\begin{frame}
 \frametitle{Acknowledgments}
-	Our research was sponsored by:
+%\emcomment{Need proper acknowledgments and logos; also probably thank Cognitect and other conj sponsors for providing an opportunity to talk}
+	{\large Thanks to:}
 	\begin{figure}
-		\includegraphics[width=10cm]{PresentationImages/logoHHMI.jpg}
+		Morris-HHMI summer undergraduate research program at UMM \includegraphics[width=10cm]{PresentationImages/logoHHMI.jpg}
 	\end{figure}
 	\begin{figure}
+		NSF North Star Stem Alliance/LSAMP grant 
 		\includegraphics[width=10cm]{PresentationImages/logoStem.jpg}
-	\end{figure}
-	{\centering
-	\noindent
-	Thank you! \par
-	Any questions? \par
-	}
+	\end{figure}	
+	{\centering \qquad Clojure/conj sponsors and Cognitect!}
 \end{frame}
 
 \begin{frame}
