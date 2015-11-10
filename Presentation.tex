@@ -125,6 +125,17 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 }
 \end{frame}
 
+\begin{frame}
+\frametitle{Dealing with the world as states}
+	\begin{figure}
+		\includegraphics[width=6cm]{PresentationImages/setupCode.png}
+	\end{figure}
+	\begin{figure}
+		\includegraphics[width=5.5cm]{PresentationImages/updateCode.png}
+		\hspace{0.1cm}
+		\includegraphics[width=5cm]{PresentationImages/updateFunctionsCode.png}
+	\end{figure}
+\end{frame}
 
 
 \begin{frame}
@@ -148,17 +159,23 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item Quil shapes live in the draw function
 		\item Quil shapes are functions to draw the shape
 	\end{itemize}
-	\includegraphics[width=4cm]{PresentationImages/quilGreenRect.png}
+	\begin{figure}
+		\includegraphics[width=6cm]{PresentationImages/quilGreenRect.png}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
 \frametitle{Our Shapes}
 \thcomment{We do it this way (ex). Uses draw function.}
 	\begin{itemize}
-		\item Our shapes are defined once and reused when needed
+		\item Our shapes are defined once in setup and reused when needed
 		\item Our shapes are drawn through the draw-shape (or ds) function
 	\end{itemize}
-	\includegraphics[width=4cm]{PresentationImages/fcsGreenRect.png}
+	\begin{figure}
+		\includegraphics[width=6cm]{PresentationImages/fcsGreenRect.png}
+		\hspace{1cm}
+		\includegraphics[width=1.2cm]{PresentationImages/greenRectangle.png}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -179,8 +196,11 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item Each simple shape holds their individual offsets
 		\item Methods are used to create complex shapes from simple ones
 	\end{itemize}
+	\begin{figure}
 	\includegraphics[width=4cm]{PresentationImages/fcsGreenRects.png}
+	\hspace{1cm}
 	\includegraphics[width=4cm]{PresentationImages/4GreenRects.png}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -190,8 +210,12 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item Complex shapes are constructed through calling above or beside
 		\item Can use reduce and map
 	\end{itemize}
-	\includegraphics[width=4cm]{PresentationImages/greenScaleRects.png}
-	\includegraphics[width=1cm]{PresentationImages/greenScaleTower.png}
+	\begin{figure}
+	\vspace{-1cm}
+	\includegraphics[width=6cm]{PresentationImages/greenScaleRects.png}
+	\hspace{1.5cm}
+	\includegraphics[width=1.2cm]{PresentationImages/greenScaleTower.png}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -200,8 +224,11 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 	\begin{itemize}
 		\item Complex shapes are also constructed through overlay
 	\end{itemize}
-	\includegraphics[width=4cm]{PresentationImages/fcsGreenHoleCode.png}
-	\includegraphics[width=4cm]{PresentationImages/greenHole.png}
+	\begin{figure}
+	\includegraphics[width=5.5cm]{PresentationImages/fcsGreenHoleCode.png}
+	\hspace{1cm}
+	\includegraphics[width=3.5cm]{PresentationImages/greenHole.png}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -210,12 +237,22 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 	\begin{itemize}
 		\item An align version of overlay, above, and beside exist
 	\end{itemize}
-	\includegraphics[width=1cm]{PresentationImages/greenLeanRight.png}
-	\includegraphics[width=3cm]{PresentationImages/greenLeanRightCode.png}
-	\includegraphics[width=1cm]{PresentationImages/greenSlopeBottom.png}
-	\includegraphics[width=3cm]{PresentationImages/greenSlopeBottomCode.png}
-	\includegraphics[width=1cm]{PresentationImages/greenAlignBottomRight.png}
-	\includegraphics[width=3cm]{PresentationImages/greenAlignBottomRightCode.png}
+		\begin{figure}
+		\includegraphics[width=3cm]{PresentationImages/greenLeanRightCode.png}
+		\hspace{0.25cm}
+		\includegraphics[width=3cm]{PresentationImages/greenSlopeBottomCode.png}
+		\hspace{0.25cm}
+		\includegraphics[width=3.65cm]{PresentationImages/greenAlignBottomRightCode.png}
+	\end{figure}
+
+	\begin{figure}
+		\includegraphics[width=1.2cm]{PresentationImages/greenLeanRight.png}
+		\hspace{1cm} 	\vspace{0.3cm}
+		\includegraphics[width=4cm]{PresentationImages/greenSlopeBottom.png}
+		\hspace{1cm} 	\vspace{0.3cm}
+		\includegraphics[width=2.5cm]{PresentationImages/greenAlignBottomRight.png}
+	\end{figure}
+
 \end{frame}
 
 \begin{frame}[fragile]
@@ -270,8 +307,15 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 	\begin{itemize}
 		\item images can be rotated and scaled similar to shapes
 	\end{itemize}
-	\includegraphics[width=4cm]{PresentationImages/pictureCode.png}
-	\includegraphics[width=1.7cm]{PresentationImages/elena.png}
+	\begin{figure}
+		\vspace{-0.3cm}
+		\includegraphics[width=1.5cm]{PresentationImages/elena.png}
+		\hspace{0.4cm}
+		\includegraphics[width=5.5cm]{PresentationImages/pictureCode.png}
+		\hspace{0.4cm}
+		\includegraphics[width=2.6cm]{PresentationImages/elena.png}
+	\end{figure}
+
 \end{frame}
 
 \thcomment{Put Beach example here}
@@ -283,7 +327,9 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item As a data structure, simple shapes are hash's
 		\item Shapes hold a variety of information within them
 	\end{itemize}
-	\includegraphics[width=8cm]{PresentationImages/rectHashmap.png}
+	\begin{figure}
+		\includegraphics[width=9cm]{PresentationImages/rectHashmap.png}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -304,7 +350,9 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 		\item Draw-shape calls the internal Quil draw function within the shape object
 		\item Draw-shape also works on image objects
 	\end{itemize}
-	\includegraphics[width=12cm]{PresentationImages/dsCode.png}
+	\begin{figure}
+		\includegraphics[width=11cm]{PresentationImages/dsCode.png}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
@@ -325,10 +373,12 @@ Inspiration: Racket "universe" package (MVC, first-class shapes):
 \frametitle{Acknowledgments}
 \emcomment{Need proper acknowledgments and logos; also probably thank Cognitect and other conj sponsors for providing an opportunity to talk}
 	Our research was sponsored by:
-	\begin{itemize}
-	\item HHMI
-	\item LSAMP
-	\end{itemize}
+	\begin{figure}
+		\includegraphics[width=10cm]{PresentationImages/logoHHMI.jpg}
+	\end{figure}
+	\begin{figure}
+		\includegraphics[width=10cm]{PresentationImages/logoStem.jpg}
+	\end{figure}
 	{\centering
 	\noindent
 	Thank you! \par
