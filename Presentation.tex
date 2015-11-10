@@ -149,10 +149,21 @@ world state $\rightarrow$ image
 \end{frame}
 
 \begin{frame}
-\frametitle{Dealing with the world as states}
+\frametitle{World States in Quil}
+	\begin{itemize}
+		\item Thanks Nikita Beloglazov for Quil Fun-Mode
+		\item State as a Hash
+	\end{itemize}
 	\begin{figure}
 		\includegraphics[width=6cm]{PresentationImages/setupCode.png}
 	\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{World States in Quil}
+\begin{itemize}
+		\item Elements of the state modified through functions
+	\end{itemize}
 	\begin{figure}
 		\includegraphics[width=5.5cm]{PresentationImages/updateCode.png}
 		\hspace{0.1cm}
@@ -167,7 +178,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Shapes as First Class Objects}
-\thcomment{like racket. Wanted to have shape object. collage style.}
 	\begin{itemize}
 		\item Racket-style implementation of shapes
 		\item Shapes are treated as objects, modified through functions
@@ -195,7 +205,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Simple Shapes}
-\thcomment{create shape template, then reuse when needed. Quil does it this way (ex)}
 	\begin{itemize}
 		\item Quil shapes live in the draw function
 		\item Quil shapes are functions to draw the shape
@@ -207,7 +216,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Our Shapes}
-\thcomment{We do it this way (ex). Uses draw function.}
 	\begin{itemize}
 		\item Our shapes are defined once in setup and reused when needed
 		\item Our shapes are drawn through the draw-shape (or ds) function
@@ -221,7 +229,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Complex Shapes}
-\thcomment{creating complex shapes. deconstructable.}
 	\begin{itemize}
 		\item Complex shapes are a collection of simple shapes
 		\item Each simple shape holds their individual offsets
@@ -236,7 +243,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Above and Beside}
-\thcomment{show above and beside (ex)}
 	\begin{itemize}
 		\item Complex shapes are constructed through calling above or beside
 		\item Can use reduce and map
@@ -251,7 +257,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Overlay}
-\rmcomment{show overlay}
 	\begin{itemize}
 		\item Complex shapes are also constructed through overlay
 	\end{itemize}
@@ -264,7 +269,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Align}
-\rmcomment{beside align overlay align etc. (ex)}
 	\begin{itemize}
 		\item An align version of overlay, above, and beside exist
 	\end{itemize}
@@ -284,22 +288,6 @@ world state $\rightarrow$ image
 		\includegraphics[width=2.5cm]{PresentationImages/greenAlignBottomRight.png}
 	\end{figure}
 
-\end{frame}
-
-\begin{frame}
-\frametitle{Code Comparison}
-\rmcomment{show overlay}
-	\begin{itemize}
-		\item Complex shapes are also constructed through overlay
-	\end{itemize}
-	\begin{figure}
-	\hspace{-0.7cm}
-	\includegraphics[width=4.5cm]{PresentationImages/ourRingsCode.png}
-	\hspace{0.1cm}
-	\includegraphics[width=2cm]{PresentationImages/rings.png}
-	\hspace{0.1cm}
-	\includegraphics[width=3.5cm]{PresentationImages/theirRingsCode.png}
-	\end{figure}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -350,10 +338,25 @@ world state $\rightarrow$ image
 	\end{itemize}
 \end{frame}
 
+\begin{frame}
+\frametitle{Code Comparison}
+	\begin{itemize}
+		\item Complex shapes are also constructed through overlay
+	\end{itemize}
+	\begin{figure}
+	\hspace{-0.7cm}
+	\includegraphics[width=3.5cm]{PresentationImages/theirRingsCode.png}
+	\hspace{0.1cm}
+	\includegraphics[width=2cm]{PresentationImages/rings.png}
+	\hspace{0.1cm}
+	\includegraphics[width=4.5cm]{PresentationImages/ourRingsCode.png}
+	\end{figure}
+\end{frame}
+
+
 
 \begin{frame}
 \frametitle{Images}
-\thcomment{images treated like shapes. Rotate, applying most of the functions.}
 	\begin{itemize}
 		\item images can be rotated and scaled similar to shapes
 	\end{itemize}
@@ -373,9 +376,8 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Simple Shape Structure}
-\rmcomment{Explain how the shape structure is set up.}
 	\begin{itemize}
-		\item As a data structure, simple shapes are hash's
+		\item As a data structure, simple shapes are hashes
 		\item Shapes hold a variety of information within them
 	\end{itemize}
 	\begin{figure}
@@ -385,18 +387,15 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Complex Shape Structure}
-\rmcomment{Explain the complex shape structure}
 	\begin{itemize}
 		\item Complex shapes are vectors of shapes
 		\item Each shape knows its position from the core of the shape
 		\item This allows for a 'deconstructable' complex shape
 	\end{itemize}
-	\thcomment{explode example here}
 \end{frame}
 
 \begin{frame}
 \frametitle{Draw-Shape Structure}
-\rmcomment{Explain how the draw-shape function works.}
 	\begin{itemize}
 		\item Draw-shape calls the internal Quil draw function within the shape object
 		\item Draw-shape also works on image objects
@@ -417,14 +416,13 @@ world state $\rightarrow$ image
 			\item Pixel-detail Overlay and Overlay-Align
 			\item More seamless integration with Quil fun-mode
 		\end{itemize}
-		\item Open Source the project \emcomment{Done?}
+		\item Open Source the project
 		\item Integrate a Clojure sound library
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Acknowledgments}
-\emcomment{Need proper acknowledgments and logos; also probably thank Cognitect and other conj sponsors for providing an opportunity to talk}
 	Our research was sponsored by:
 	\begin{figure}
 		\includegraphics[width=10cm]{PresentationImages/logoHHMI.jpg}
@@ -437,5 +435,9 @@ world state $\rightarrow$ image
 	Thank you! \par
 	Any questions? \par
 	}
+\end{frame}
+
+\begin{frame}
+\frametitle{Questions?}
 \end{frame}
 \end{document}
