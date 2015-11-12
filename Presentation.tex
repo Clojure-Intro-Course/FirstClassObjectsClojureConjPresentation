@@ -141,16 +141,23 @@ world state $\rightarrow$ image
 
 \end{frame}
 
+\section{Clojure first-class shapes}
+
+\subsection{Functional MVC in Quil: fun-mode}
+
 \begin{frame}
 \frametitle{World States in Quil}
+\emcomment{Mention where the fun-mode is and where our work starts}
 	\begin{itemize}
 		\item  Using Nikita Beloglazov's  Quil fun-mode (functional MVC)
-		\item fun-mode + first class shapes = super-fun!
 		\item State as a HashMap
 	\end{itemize}
 	\begin{figure}
 		\includegraphics[width=8cm]{PresentationImages/setupCode.png}
 	\end{figure}
+	\begin{itemize}
+		\item fun-mode + first class shapes = super-fun!
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -159,15 +166,12 @@ world state $\rightarrow$ image
 		\item Elements of the state modified through functions
 	\end{itemize}
 	\begin{figure}
-		\includegraphics[width=6cm]{PresentationImages/updateCode.png}
-	\end{figure}
-	\begin{figure}
-		\includegraphics[width=6cm]{PresentationImages/updateFunctionsCode.png}
+		\includegraphics[width=8cm]{PresentationImages/updateCode.png}
 	\end{figure}
 \end{frame}
 
 
-\section{Clojure first-class shapes}
+
 
 \subsection{Ideas and examples}
 
@@ -178,12 +182,13 @@ world state $\rightarrow$ image
 		\item Shapes are treated as objects, modified through functions
 		\item Shapes hold their specifications for drawing
 		\item Easy to redraw wherever needed
-		\item Easier to understand conceptually for students
+		\item Easier to understand conceptually for beginners
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Creating a Collage}
+\emcomment{Add separate shapes for the collage}
 	\begin{itemize}
 		\item Functional Quil uses paintbrush approach
 	\end{itemize}
@@ -201,8 +206,8 @@ world state $\rightarrow$ image
 \begin{frame}
 \frametitle{Simple Shapes}
 	\begin{itemize}
-		\item Quil shapes live in the draw function
-		\item Quil shapes are functions to draw the shape
+		\item Quil shapes live in the draw function 
+		\item Quil shapes are functions to draw the shape \emcomment{I am not sure this true. Shapes are drawn using functions, but they don't exists in a program in the same way as ours do}
 	\end{itemize}
 	\begin{figure}
 		\includegraphics[width=6cm]{PresentationImages/quilGreenRect.png}
@@ -213,7 +218,7 @@ world state $\rightarrow$ image
 \frametitle{Our Shapes}
 	\begin{itemize}
 		\item Our shapes are defined once in setup and reused when needed
-		\item Our shapes are drawn through the draw-shape (or ds) function
+		\item Our shapes are drawn through the draw-shape (or ds) function \emcomment{I am not sure we need to say both names: do we ever refer to it as draw-shape? Just say "ds stands for draw-shape"?}
 	\end{itemize}
 	\begin{figure}
 		\includegraphics[width=6cm]{PresentationImages/fcsGreenRect.png}
@@ -224,6 +229,7 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Complex Shapes}
+\emcomment{show a shape with a less obvious center, like a circle beside a rectangle?} 
 	\begin{itemize}
 		\item Complex shapes are a collection of simple shapes
 		\item Each simple shape holds their individual offsets
@@ -240,7 +246,7 @@ world state $\rightarrow$ image
 \frametitle{Above and Beside}
 	\begin{itemize}
 		\item Complex shapes are constructed through calling above or beside
-		\item Can use reduce and map
+		\item Can use reduce and map \emcomment{give an example of using {\tt above} in {\tt reduce} (in code)}
 	\end{itemize}
 	\begin{figure}
 	\vspace{-1cm}
@@ -265,7 +271,7 @@ world state $\rightarrow$ image
 \begin{frame}
 \frametitle{Align}
 	\begin{itemize}
-		\item An align version of overlay, above, and beside exist
+		\item An align version of overlay, above, and beside exist \emcomment{remove ds from all of these (and prehaps from some earlier ones, too)}
 	\end{itemize}
 		\begin{figure}
 		\includegraphics[width=3cm]{PresentationImages/greenLeanRightCode.png}
@@ -335,8 +341,9 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Code Comparison}
+\emcomment{Switch this slide with the next one?}
 	\begin{itemize}
-		\item Strong conceptual differences in code structure
+		\item Quil code vs our code 
 	\end{itemize}
 	\begin{figure}
 	\hspace{-0.4cm}
