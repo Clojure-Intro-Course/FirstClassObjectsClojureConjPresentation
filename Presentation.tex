@@ -253,7 +253,7 @@ world state $\rightarrow$ image
 	\end{itemize}
 	\begin{figure}
 	\vspace{-1cm}
-	\includegraphics[width=6cm]{PresentationImages/greenScaleRects.pdf}
+	\includegraphics[width=6cm]{PresentationImages/greenScaleRects.png}
 	\hspace{1.5cm}
 	\includegraphics[width=1.2cm]{PresentationImages/greenScaleTower.png}
 	\end{figure}
@@ -265,7 +265,7 @@ world state $\rightarrow$ image
 		\item Complex shapes are also constructed through overlay
 	\end{itemize}
 	\begin{figure}
-	\includegraphics[width=5.5cm]{PresentationImages/greenHoleCode.pdf}
+	\includegraphics[width=5.5cm]{PresentationImages/fcsGreenHoleCode.png}
 	\hspace{1cm}
 	\includegraphics[width=3.5cm]{PresentationImages/greenHole.png}
 	\end{figure}
@@ -277,19 +277,15 @@ world state $\rightarrow$ image
 		\item An align version of overlay, above, and beside exist \emcomment{remove ds from all of these (and prehaps from some earlier ones, too)}
 	\end{itemize}
 		\begin{figure}
-		\includegraphics[width=3cm]{PresentationImages/greenLeanRightCode.pdf}
-		\hspace{0.25cm}
-		\includegraphics[width=3cm]{PresentationImages/greenSlopeBottomCode.pdf}
-		\hspace{0.25cm}
-		\includegraphics[width=3.65cm]{PresentationImages/greenAlignBottomRightCode.pdf}
+		\includegraphics[width=5cm]{PresentationImages/greenLeanRightCode.pdf}
+		\hspace{0.1cm}
+		\includegraphics[width=5.5cm]{PresentationImages/greenAlignBottomRightCode.pdf}
 	\end{figure}
 
 	\begin{figure}
-		\includegraphics[width=1.2cm]{PresentationImages/greenLeanRight.png}
-		\hspace{1cm} 	\vspace{0.3cm}
-		\includegraphics[width=4cm]{PresentationImages/greenSlopeBottom.png}
-		\hspace{1cm} 	\vspace{0.3cm}
-		\includegraphics[width=2.5cm]{PresentationImages/greenAlignBottomRight.png}
+		\includegraphics[width=1.0cm]{PresentationImages/greenLeanRight.png}
+		\hspace{4cm} 	\vspace{0.3cm}
+		\includegraphics[width=2cm]{PresentationImages/greenAlignBottomRight.png}
 	\end{figure}
 
 \end{frame}
@@ -363,15 +359,15 @@ world state $\rightarrow$ image
 \begin{frame}
 \frametitle{Images}
 	\begin{itemize}
-		\item images can be rotated and scaled similar to shapes \emcomment{rotate the imgae, show an example of combining an image with a rectangle or some such}
+		\item images can be rotated and scaled similar to shapes \emcomment{rotate the image, show an example of combining an image with a rectangle or some such}
 	\end{itemize}
 	\begin{figure}
 		\vspace{-0.3cm}
 		\includegraphics[width=1.5cm]{PresentationImages/kappa96x130.png}
 		\hspace{0.4cm}
-		\includegraphics[width=5.5cm]{PresentationImages/pictureOnBoxCode.pdf}
+		\includegraphics[width=5.5cm]{PresentationImages/pictureCode.pdf}
 		\hspace{0.4cm}
-		\includegraphics[width=2.6cm]{PresentationImages/onBoxKappa.pdf}
+		\includegraphics[width=2.6cm]{PresentationImages/kappa96x130.png}
 	\end{figure}
 
 \end{frame}
@@ -398,17 +394,27 @@ world state $\rightarrow$ image
 		\item Complex shapes are vectors of simple shapes
 		\item Each shape knows its position from the center of the shape
 		\item This is different from Racket.
-		\item This allows for us to iterate over a complex shape \emcomment{For the ability to access individual simple shapes? To iterate over...?}
+		\item This allows for the ability to alter individual simple shapes. \emcomment{For the ability to access individual simple shapes? To iterate over...?}
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 \frametitle{Combining Complex Shapes}
+	\rmcomment{change wording here}
 	\begin{itemize}
 		\item Combining complex shapes creates a new complex shape
 		\item This new shape does not consist of each old complex shape
+		\item The new complex shape has each simple shape.
 		\begin{figure}
-			\includegraphics[width=4cm]{PresentationImages/twoComplex.pdf}
+			\vspace{.5cm}
+			\begin{figure}
+				\hspace{3.7cm}
+				\vspace{-.5cm}
+				\includegraphics[width=6.2cm]{PresentationImages/complexStructure.pdf}
+			\end{figure}
+			\includegraphics[width=3.5cm]{PresentationImages/twoComplexCode.pdf}
+			\hspace{0.3cm}
+			\includegraphics[width=5.5cm]{PresentationImages/twoComplex.pdf}
 		\end{figure}
 	\end{itemize}
 \end{frame}
