@@ -207,7 +207,8 @@ world state $\rightarrow$ image
 \frametitle{Simple Shapes}
 	\begin{itemize}
 		\item Quil shapes live in the draw function 
-		\item Quil shapes are functions to draw the shape \emcomment{I am not sure this true. Shapes are drawn using functions, but they don't exists in a program in the same way as ours do}
+		\item Quil shapes do not exist until they are drawn. 
+		\item The function to make a rectangle only draws the shape. \emcomment{I am not sure this true. Shapes are drawn using functions, but they don't exists in a program in the same way as ours do}
 	\end{itemize}
 	\begin{figure}
 		\includegraphics[width=6cm]{PresentationImages/quilGreenRect.pdf}
@@ -220,7 +221,7 @@ world state $\rightarrow$ image
 \frametitle{Our Shapes}
 	\begin{itemize}
 		\item Our shapes are defined once in setup and reused when needed
-		\item Our shapes are drawn through the draw-shape (or ds) function \emcomment{I am not sure we need to say both names: do we ever refer to it as draw-shape? Just say "ds stands for draw-shape"?}
+		\item Our shapes are drawn through the ds (draw-shape) function \emcomment{I am not sure we need to say both names: do we ever refer to it as draw-shape? Just say "ds stands for draw-shape"?}
 	\end{itemize}
 	\begin{figure}
 		\includegraphics[width=6cm]{PresentationImages/ourGreenRectCode.pdf}
@@ -396,7 +397,19 @@ world state $\rightarrow$ image
 	\begin{itemize}
 		\item Complex shapes are vectors of simple shapes
 		\item Each shape knows its position from the center of the shape
-		\item This allows for a 'deconstructable' complex shape \emcomment{For the ability to access individual simple shapes? To iterate over...?}
+		\item This is different from Racket.
+		\item This allows for us to iterate over a complex shape \emcomment{For the ability to access individual simple shapes? To iterate over...?}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Combining Complex Shapes}
+	\begin{itemize}
+		\item Combining complex shapes creates a new complex shape
+		\item This new shape does not consist of each old complex shape
+		\begin{figure}
+			\includegraphics[width=4cm]{PresentationImages/twoComplex.pdf}
+		\end{figure}
 	\end{itemize}
 \end{frame}
 
