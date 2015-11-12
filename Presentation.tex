@@ -381,6 +381,7 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Simple Shape Structure}
+\emcomment{show the entire create-rectangle? Need to know what colors, pict are. Rename variables to something more reasonable, rather than wid, hei}
 	\begin{itemize}
 		\item As a data structure, simple shapes are hashes
 		\item Shapes hold a variety of information within them
@@ -392,10 +393,11 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Complex Shape Structure}
+\emcomment{Say that this implementation is different from Racket (on the slide, or at least mention)}
 	\begin{itemize}
-		\item Complex shapes are vectors of shapes
-		\item Each shape knows its position from the core of the shape
-		\item This allows for a 'deconstructable' complex shape
+		\item Complex shapes are vectors of simple shapes
+		\item Each shape knows its position from the center of the shape
+		\item This allows for a 'deconstructable' complex shape \emcomment{For the ability to access individual simple shapes? To iterate over...?}
 	\end{itemize}
 \end{frame}
 
@@ -415,21 +417,23 @@ world state $\rightarrow$ image
 \begin{frame}
 	\frametitle{Future Work}
 	\begin{itemize}
-		\item Make it easy to get the color information from shapes (currently color is hard-wired in drawing function). 
+		\item Make it easy to get the color information from shapes (currently color is hard-wired in drawing function) 
 		\item Add more functionality
 		\begin{itemize}
+			\item Add the ability to get the color of a simple shape
 			\item Rotate complex shapes
 			\item Pixel-detail Overlay and Overlay-Align
 			\item Add support for text, textareas, etc.  
 			\item More seamless integration with Quil fun-mode
 		\end{itemize}
-		\item Add examples to the git repo. 
-		\item Wish-list: Integrate a Clojure sound library
+		\item Add examples to the git repo 
+		\item Wish-list: Integrate overtone (music library)
 	\end{itemize}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Where to find it}
+	\emcomment{Nic says you should include the line for referring the package.}
 	\begin{itemize}
 	\item Clojars Page
 	\href{https://clojars.org/org.clojars.quil-firstclass-shapes/firstclassshapes}{https://clojars.org/org.clojars.quil-firstclass-shapes/firstclassshapes}
@@ -462,7 +466,7 @@ Used for educational purposes (just like ours).
 		NSF North Star Stem Alliance/LSAMP grant 
 		\includegraphics[width=12cm]{PresentationImages/logoStem.jpg}
 	\end{figure}	
-	{\centering \qquad Clojure/conj sponsors and Cognitect!}
+	{\centering \qquad Clojure/conj organizers and sponsors!}
 \end{frame}
 
 \begin{frame}[fragile]
