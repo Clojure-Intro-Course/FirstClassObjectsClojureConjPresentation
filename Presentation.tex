@@ -20,7 +20,7 @@
 \RecustomVerbatimEnvironment{verbatim}{Verbatim}{} 	
 
 \definecolor{ForestGreen}{RGB}{34,139,34}
-\definecolor{BestBlue}{RGB}{80,255,255}
+\definecolor{BestBlue}{RGB}{80,200,200}
 % Uncomment this if you want to show work-in-progress comments
 \newcommand{\comment}[1]{{\bf \tt  {#1}}}
 % Uncomment this if you don't want to show comments
@@ -145,6 +145,7 @@ world state $\rightarrow$ image
 
 \subsection{Functional MVC in Quil: fun-mode}
 
+
 \begin{frame}
 \frametitle{World States in Quil}
 \emcomment{Mention where the fun-mode is and where our work starts}
@@ -171,9 +172,8 @@ world state $\rightarrow$ image
 \end{frame}
 
 
-
-
 \subsection{Ideas and examples}
+
 
 \begin{frame}
 \frametitle{Shapes as First Class Objects}
@@ -249,14 +249,44 @@ world state $\rightarrow$ image
 \frametitle{Above and Beside}
 	\begin{itemize}
 		\item Complex shapes are constructed through calling above or beside
-		\item Can use reduce and map \emcomment{give an example of using {\tt above} in {\tt reduce} (in code)}
+		\item Reduce can be used for similar effect \emcomment{give an example of using {\tt above} in {\tt reduce} (in code)}
 	\end{itemize}
+
 	\begin{figure}
-	\vspace{-1cm}
-	\includegraphics[width=6cm]{PresentationImages/greenScaleRects.pdf}
-	\hspace{1.5cm}
-	\includegraphics[width=1.2cm]{PresentationImages/greenScaleTower.png}
+	\hspace{-4.3cm}
+	\vspace{0.8cm}
+		\includegraphics[width=5.7cm]{PresentationImages/greenScaleRects.pdf}
 	\end{figure}
+	\begin{figure}
+	\vspace{-4.8cm}
+		\includegraphics[width=6.9cm]{PresentationImages/greenScaleRectsReduce.pdf}
+		\hspace{1.6cm}
+		\includegraphics[width=1.3cm]{PresentationImages/greenScaleTower.pdf}
+	\end{figure}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Combining Complex Shapes}
+	\rmcomment{change wording here}
+	
+	\thcomment{Decide where this slide should be exactly!!}
+	\begin{itemize}
+		\item Combining complex shapes creates a new complex shape
+		\item This new shape does not consist of each old complex shape
+		\item The new complex shape has each simple shape.
+		\begin{figure}
+			\vspace{.5cm}
+			\begin{figure}
+				\hspace{3.7cm}
+				\vspace{-.5cm}
+				\includegraphics[width=6.2cm]{PresentationImages/complexStructure.pdf}
+			\end{figure}
+			\includegraphics[width=3.5cm]{PresentationImages/twoComplexCode.pdf}
+			\hspace{0.3cm}
+			\includegraphics[width=5.5cm]{PresentationImages/twoComplex.pdf}
+		\end{figure}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -265,7 +295,7 @@ world state $\rightarrow$ image
 		\item Complex shapes are also constructed through overlay
 	\end{itemize}
 	\begin{figure}
-	\includegraphics[width=5.5cm]{PresentationImages/greenHoleCode.pdf}
+	\includegraphics[width=6cm]{PresentationImages/greenHoleCode.pdf}
 	\hspace{1cm}
 	\includegraphics[width=3.5cm]{PresentationImages/greenHole.png}
 	\end{figure}
@@ -287,7 +317,6 @@ world state $\rightarrow$ image
 		\hspace{4cm} 	\vspace{0.3cm}
 		\includegraphics[width=2cm]{PresentationImages/greenAlignBottomRight.png}
 	\end{figure}
-
 \end{frame}
 
 \begin{frame}[fragile]
@@ -339,8 +368,24 @@ world state $\rightarrow$ image
 \end{frame}
 
 \begin{frame}
+\frametitle{Images}
+	\begin{itemize}
+		\item images can be rotated and scaled similar to shapes \emcomment{rotate the imgae, show an example of combining an image with a rectangle or some such}
+	\end{itemize}
+	\begin{figure}
+		\vspace{-1.5cm}
+		\includegraphics[width=1cm]{PresentationImages/kappa96x130.png}
+		\hspace{0.4cm}
+		\includegraphics[width=6cm]{PresentationImages/pictureOnBoxCode.pdf}
+		\hspace{0.4cm}
+		%\vspace{-3cm}
+		\includegraphics[width=2cm]{PresentationImages/onBoxKappa.pdf}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
 \frametitle{Code Comparison}
-\emcomment{Switch this slide with the next one?}
+%\emcomment{Switch this slide with the next one?}
 	\begin{itemize}
 		\item Quil code vs our code 
 	\end{itemize}
@@ -355,25 +400,8 @@ world state $\rightarrow$ image
 \end{frame}
 
 
-
-\begin{frame}
-\frametitle{Images}
-	\begin{itemize}
-		\item images can be rotated and scaled similar to shapes \emcomment{rotate the imgae, show an example of combining an image with a rectangle or some such}
-	\end{itemize}
-	\begin{figure}
-		\vspace{-0.3cm}
-		\includegraphics[width=1.5cm]{PresentationImages/kappa96x130.png}
-		\hspace{0.4cm}
-		\includegraphics[width=5.5cm]{PresentationImages/pictureOnBoxCode.pdf}
-		\hspace{0.4cm}
-		\includegraphics[width=2.6cm]{PresentationImages/onBoxKappa.pdf}
-	\end{figure}
-
-\end{frame}
-
-
 \subsection{Implementation}
+
 
 \begin{frame}
 \frametitle{Simple Shape Structure}
@@ -395,27 +423,6 @@ world state $\rightarrow$ image
 		\item Each shape knows its position from the center of the shape
 		\item This is different from Racket.
 		\item This allows for the ability to alter individual simple shapes. \emcomment{For the ability to access individual simple shapes? To iterate over...?}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}
-\frametitle{Combining Complex Shapes}
-	\rmcomment{change wording here}
-	\begin{itemize}
-		\item Combining complex shapes creates a new complex shape
-		\item This new shape does not consist of each old complex shape
-		\item The new complex shape has each simple shape.
-		\begin{figure}
-			\vspace{.5cm}
-			\begin{figure}
-				\hspace{3.7cm}
-				\vspace{-.5cm}
-				\includegraphics[width=6.2cm]{PresentationImages/complexStructure.pdf}
-			\end{figure}
-			\includegraphics[width=3.5cm]{PresentationImages/twoComplexCode.pdf}
-			\hspace{0.3cm}
-			\includegraphics[width=5.5cm]{PresentationImages/twoComplex.pdf}
-		\end{figure}
 	\end{itemize}
 \end{frame}
 
