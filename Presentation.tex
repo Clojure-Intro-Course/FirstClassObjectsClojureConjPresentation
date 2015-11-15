@@ -148,7 +148,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{World States in Quil}
-\emcomment{Mention where the fun-mode is and where our work starts}
 	\begin{itemize}
 		\item  Using Nikita Beloglazov's  Quil fun-mode (functional MVC)
 		\item State as a HashMap
@@ -188,7 +187,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Creating a Collage}
-\emcomment{Add separate shapes for the collage}
 	\begin{itemize}
 		\item Functional Quil uses paintbrush approach
 	\end{itemize}
@@ -201,6 +199,8 @@ world state $\rightarrow$ image
 	\begin{figure}
 	\hspace{-1cm}
 	\includegraphics[width=4.5cm]{PresentationImages/collage2.pdf}
+	\includegraphics[width=2cm]{PresentationImages/blackArrow.png}
+	\includegraphics[width=3.1cm]{PresentationImages/collage.jpg}
 	\end{figure}
 \end{frame}
 
@@ -209,7 +209,7 @@ world state $\rightarrow$ image
 	\begin{itemize}
 		\item Quil shapes live in the draw function 
 		\item Quil shapes do not exist until they are drawn. 
-		\item The function to make a rectangle only draws the shape. \emcomment{I am not sure this true. Shapes are drawn using functions, but they don't exists in a program in the same way as ours do}
+		\item The function to make a rectangle only draws the shape.
 	\end{itemize}
 	\begin{figure}
 		\includegraphics[width=6cm]{PresentationImages/quilGreenRect.pdf}
@@ -222,7 +222,7 @@ world state $\rightarrow$ image
 \frametitle{Our Shapes}
 	\begin{itemize}
 		\item Our shapes are defined once in setup and reused when needed
-		\item Our shapes are drawn through the ds (draw-shape) function \emcomment{I am not sure we need to say both names: do we ever refer to it as draw-shape? Just say "ds stands for draw-shape"?}
+		\item Our shapes are drawn through the ds (draw-shape) function 
 	\end{itemize}
 	\begin{figure}
 		\includegraphics[width=6cm]{PresentationImages/ourGreenRectCode.pdf}
@@ -233,7 +233,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Complex Shapes}
-\emcomment{show a shape with a less obvious center, like a circle beside a rectangle?} 
 	\begin{itemize}
 		\item Complex shapes are a collection of simple shapes
 		\item Each simple shape holds their individual offsets
@@ -250,7 +249,7 @@ world state $\rightarrow$ image
 \frametitle{Above and Beside}
 	\begin{itemize}
 		\item Complex shapes are constructed through calling above or beside
-		\item Reduce can be used for similar effect \emcomment{give an example of using {\tt above} in {\tt reduce} (in code)}
+		\item Reduce can be used for similar effect
 	\end{itemize}
 
 	\begin{figure}
@@ -266,6 +265,13 @@ world state $\rightarrow$ image
 	\end{figure}
 
 \end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item And now for a successful live demo
+	\end{itemize}
+\end{frame}
+
 
 \begin{frame}
 \frametitle{Combining Complex Shapes}
@@ -298,6 +304,7 @@ world state $\rightarrow$ image
 	\begin{figure}
 	\includegraphics[width=6cm]{PresentationImages/greenHoleCode.pdf}
 	\hspace{1cm}
+	\vspace{2cm}
 	\includegraphics[width=3.5cm]{PresentationImages/greenHole.png}
 	\end{figure}
 \end{frame}
@@ -305,7 +312,7 @@ world state $\rightarrow$ image
 \begin{frame}
 \frametitle{Align}
 	\begin{itemize}
-		\item An align version of overlay, above, and beside exist \emcomment{remove ds from all of these (and prehaps from some earlier ones, too)}
+		\item An align version of overlay, above, and beside exist
 	\end{itemize}
 		\begin{figure}
 		\includegraphics[width=5cm]{PresentationImages/greenLeanRightCode.pdf}
@@ -371,10 +378,10 @@ world state $\rightarrow$ image
 \begin{frame}
 \frametitle{Images}
 	\begin{itemize}
-		\item images can be rotated and scaled similar to shapes \emcomment{rotate the imgae, show an example of combining an image with a rectangle or some such}
+		\item images can be rotated and scaled similar to shapes
 	\end{itemize}
 	\begin{figure}
-		\vspace{-1.5cm}
+		\vspace{0.2cm}
 		\includegraphics[width=1cm]{PresentationImages/kappa96x130.png}
 		\hspace{0.4cm}
 		\includegraphics[width=6cm]{PresentationImages/pictureOnBoxCode.pdf}
@@ -386,7 +393,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Code Comparison}
-%\emcomment{Switch this slide with the next one?}
 	\begin{itemize}
 		\item Quil code vs our code 
 	\end{itemize}
@@ -406,7 +412,6 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Simple Shape Structure}
-\emcomment{show the entire create-rectangle? Need to know what colors, pict are. Rename variables to something more reasonable, rather than wid, hei}
 	\begin{itemize}
 		\item As a data structure, simple shapes are hashes
 		\item Shapes hold a variety of information within them
@@ -418,12 +423,17 @@ world state $\rightarrow$ image
 
 \begin{frame}
 \frametitle{Complex Shape Structure}
-\emcomment{Say that this implementation is different from Racket (on the slide, or at least mention)}
 	\begin{itemize}
 		\item Complex shapes are vectors of simple shapes
 		\item Each shape knows its position from the center of the shape
-		\item This is different from Racket.
-		\item This allows for the ability to alter individual simple shapes. \emcomment{For the ability to access individual simple shapes? To iterate over...?}
+		\item This is different from Racket's implementation.
+		\item This allows for the ability to alter individual simple shapes.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{itemize}
+		\item And now for another successful live demo
 	\end{itemize}
 \end{frame}
 
@@ -459,10 +469,12 @@ world state $\rightarrow$ image
 
 \begin{frame}
 	\frametitle{Where to find it}
-	\emcomment{Nic says you should include the line for referring the package.}
 	\begin{itemize}
 	\item Clojars Page
 	\href{https://clojars.org/org.clojars.quil-firstclass-shapes/firstclassshapes}{https://clojars.org/org.clojars.quil-firstclass-shapes/firstclassshapes}
+	
+	\href{https://clojars.org/org.clojars.quil-firstclass-shapes/firstclassshapes} {[org.clojars.quil-firstclass-shapes/firstclassshapes "0.0.1"]}
+	
 	\item Github Page
 	\href{https://github.com/Clojure-Intro-Course/quil-firstclass-shapes}{https://github.com/Clojure-Intro-Course/quil-firstclass-shapes}
 	\end{itemize}
@@ -483,7 +495,6 @@ Used for educational purposes (just like ours).
 
 \begin{frame}
 \frametitle{Acknowledgments}
-%\emcomment{Need proper acknowledgments and logos; also probably thank Cognitect and other conj sponsors for providing an opportunity to talk}
 	{\large Thanks to:}
 	\begin{figure}
 		Morris-HHMI summer undergraduate research program at UMM \includegraphics[width=10cm]{PresentationImages/logoHHMI.jpg}
@@ -499,7 +510,7 @@ Used for educational purposes (just like ours).
 \frametitle{Questions?}
 
 \begin{tikzpicture}[remember picture,overlay]
-\node at (current page.center) {\includegraphics[width=3cm]{PresentationImages/qMarkWhite.png}};
+\node at (current page.center) {\includegraphics[width=3cm]{PresentationImages/qMarkgrey.png}};
 \end{tikzpicture}
 \begin{verbatim}[fontsize=\tiny]
 (defn setup []
